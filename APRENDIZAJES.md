@@ -22,3 +22,9 @@
 - **Conflicto de merge:** ocurre cuando dos ramas cambian las mismas líneas y Git no sabe cuál conservar. Con Dependabot se resuelve comentando `@dependabot rebase` en su PR: rehace la rama sobre el `main` actual.
 - **LF frente a CRLF:** Windows termina las líneas con CRLF; Linux y macOS, con LF. Mezclarlos genera diffs ruidosos y puede romper scripts en CI (que corre en Linux). `.gitattributes` con `* text=auto eol=lf` normaliza todo a LF en el repo y en el checkout.
 - **gh CLI:** `gh pr create` abre un PR, `gh pr checks` muestra el estado de CI y `gh pr merge` lo fusiona.
+
+## 3. Parser de HTML y datos (BeautifulSoup, pydantic, JSONL)
+
+- **BeautifulSoup frente a cheerio:** ambos recorren el DOM con selectores CSS. `soup.select("div#art_5")` equivale a `$("div#art_5")`; `.get_text(" ")` a `.text()`; `.find_parent()` a `.closest()`. Se usa con `lxml` como motor, que tolera mejor el HTML antiguo de EUR-Lex.
+- **pydantic frente a zod:** el modelo `Fragmento` (clase con tipos) hace de esquema y de tipo a la vez, como `z.object` + `z.infer`. Valida al construir y `model_dump_json()` serializa.
+- **JSONL:** un objeto JSON por línea. Se puede escribir y leer en streaming, `git diff` muestra solo las líneas cambiadas y un fallo no corrompe el resto del fichero (un JSON grande sí).
