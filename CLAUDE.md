@@ -4,7 +4,7 @@
 Asistente RAG en español sobre el Reglamento (UE) 2024/1689 (AI Act). Responde citando el artículo exacto, dice "no lo sé" si no hay contexto relevante y avisa de que no es asesoramiento legal.
 
 ## Stack
-Python 3.12 + FastAPI (backend), Supabase con pgvector, Groq (generación), embeddings multilingües gratuitos, Next.js (frontend). Gestión de dependencias con uv.
+Python 3.12 + FastAPI (backend), Neon (Postgres + pgvector; psycopg 3), Groq (generación), embeddings con Cloudflare Workers AI (`@cf/baai/bge-m3`, 1024 dim), Next.js (frontend). Gestión de dependencias con uv.
 
 ## Comandos (desde `backend/`)
 - `uv sync` — instalar dependencias
