@@ -15,3 +15,10 @@
 
 - Un venv es un entorno virtual: una carpeta con su propio Python y paquetes, equivalente a tener `node_modules` por proyecto. `uv` lo crea y gestiona solo.
 - `pip-audit` consulta bases de datos de vulnerabilidades (PyPI/OSV) sobre lo instalado; `npm audit` hace lo mismo con el registro de npm.
+
+## 2. Git y GitHub
+
+- **Rama default:** la primera rama que se sube a un repo vacío se convierte en la default de GitHub. Por eso hay que subir `main` primero y después las ramas de trabajo.
+- **Conflicto de merge:** ocurre cuando dos ramas cambian las mismas líneas y Git no sabe cuál conservar. Con Dependabot se resuelve comentando `@dependabot rebase` en su PR: rehace la rama sobre el `main` actual.
+- **LF frente a CRLF:** Windows termina las líneas con CRLF; Linux y macOS, con LF. Mezclarlos genera diffs ruidosos y puede romper scripts en CI (que corre en Linux). `.gitattributes` con `* text=auto eol=lf` normaliza todo a LF en el repo y en el checkout.
+- **gh CLI:** `gh pr create` abre un PR, `gh pr checks` muestra el estado de CI y `gh pr merge` lo fusiona.

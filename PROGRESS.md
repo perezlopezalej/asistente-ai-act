@@ -1,7 +1,7 @@
 # Progreso
 
-- [ ] Fase 1 — Montaje del repo (en curso)
-- [ ] Fase 2
+- [x] Fase 1 — Montaje del repo (completada 2026-11-16)
+- [ ] Fase 2 — Siguiente
 - [ ] Fase 3
 - [ ] Fase 4
 - [ ] Fase 5
