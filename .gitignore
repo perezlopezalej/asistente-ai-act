@@ -1,0 +1,26 @@
+# Python
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+
+# Node
+node_modules/
+.next/
+out/
+
+# Secretos
+.env
+.env.*
+!.env.example
+
+# Datos
+data/raw/
+
+# Sistema / editor
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
