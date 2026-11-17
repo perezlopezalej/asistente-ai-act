@@ -22,7 +22,11 @@ class Settings(BaseSettings):
     llm_temperature: float = 0.1
 
     # Recuperación y abstención
-    umbral_similitud: float = 0.50  # provisional: se calibra en la fase 4
+    # Calibrado en la fase 4b: con 0.46 hay 0 rechazos injustos y 9 aceptaciones, igual que con
+    # 0.48 pero sin rechazar g-022; g-038 está en 0.459, así que 0.45 deja margen. La barrera 1
+    # solo filtra lo evidente: las distribuciones se solapan (con respuesta 0.464-0.806,
+    # sin respuesta 0.257-0.605).
+    umbral_similitud: float = 0.45
     k_articulos: int = 5
     k_considerandos: int = 2
     presupuesto_contexto_caracteres: int = 10000

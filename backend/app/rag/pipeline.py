@@ -26,7 +26,7 @@ INTENTOS_LLM = 2  # 1 petición + 1 reintento si la salida no es válida
 
 @dataclass
 class ConfigRag:
-    umbral_similitud: float = 0.50
+    umbral_similitud: float = 0.45
     k_articulos: int = 5
     k_considerandos: int = 2
     presupuesto_contexto_caracteres: int = 10000
