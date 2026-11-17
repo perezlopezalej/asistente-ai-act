@@ -24,3 +24,6 @@ data/raw/
 Thumbs.db
 .vscode/
 .idea/
+
+# Workspace de VS Code
+*.code-workspace
