@@ -5,7 +5,7 @@ from collections.abc import Callable, Iterator
 
 import httpx
 
-from app.embeddings.base import DIMENSIONES, EmbeddingError
+from app.embeddings.base import DIMENSIONES, EmbeddingCuotaError, EmbeddingError
 
 API_URL = "https://api.cloudflare.com/client/v4/accounts/{account_id}/ai/run/{model}"
 REINTENTABLES = {429, 500, 502, 503, 504}
@@ -77,7 +77,8 @@ class CloudflareEmbedder:
                     continue
             if intento < self._max_retries:
                 self._sleep(self._backoff_base * 2**intento)
-        raise EmbeddingError(
+        clase = EmbeddingCuotaError if ultimo_error == "HTTP 429" else EmbeddingError
+        raise clase(
             f"Cloudflare falló tras {self._max_retries + 1} intentos (último: {ultimo_error})"
         )
 
