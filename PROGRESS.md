@@ -9,6 +9,9 @@
 - [ ] Fase 5
 - [ ] Fase 6
 
+## Prioridad alta antes del despliegue
+- [ ] Actualizar el corpus a la versión consolidada de EUR-Lex o incorporar el Reglamento (UE) 2026/1744 (AI Omnibus, en vigor desde 27/07/2026) como segunda fuente, y revisar las preguntas `afectada_omnibus` de `evals/golden.jsonl` (g-013, g-015, g-022, g-023).
+
 ## Decisiones
 - [ADR 001](docs/decisiones/001-embeddings.md): embeddings con Cloudflare `@cf/baai/bge-m3`.
 - [ADR 002](docs/decisiones/002-base-de-datos.md): Neon (ramas `development`/`production`) en lugar de Supabase.

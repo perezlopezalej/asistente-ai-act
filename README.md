@@ -2,6 +2,8 @@
 
 Asistente RAG en español sobre el Reglamento (UE) 2024/1689 (AI Act). Responde citando el artículo exacto y dice "no lo sé" cuando no hay contexto relevante.
 
+> **Basado en el texto original del Reglamento (UE) 2024/1689; no incluye la modificación del Reglamento (UE) 2026/1744 (AI Omnibus).**
+
 > **Aviso:** esto no es asesoramiento legal. Consulta a un profesional cualificado.
 
 ## Stack
