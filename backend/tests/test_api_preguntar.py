@@ -18,6 +18,9 @@ CLAVES_RESPUESTA = {"estado", "afirmaciones", "citas", "mensaje", "aviso_legal",
 
 @pytest.fixture
 def cliente():
+    # SIEMPRE se sustituye get_pipeline: FastAPI resuelve las dependencias antes de devolver
+    # un 422, así que sin esto el test dependería de las credenciales del entorno.
+    _usar(FakeLLM([salida(("X.", ["art-5-ap-1"]))]))
     yield TestClient(app)
     app.dependency_overrides.clear()
 
