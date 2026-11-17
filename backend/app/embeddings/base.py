@@ -13,6 +13,10 @@ class EmbeddingError(RuntimeError):
     """Fallo al obtener embeddings (nunca incluye credenciales en el mensaje)."""
 
 
+class EmbeddingCuotaError(EmbeddingError):
+    """Cloudflare siguió respondiendo 429 (límite o cuota) tras agotar los reintentos."""
+
+
 class Embedder(Protocol):
     def embed_documents(self, textos: list[str]) -> list[list[float]]:
         """Embebe una lista de textos (uno por vector, en el mismo orden)."""
